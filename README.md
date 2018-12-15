@@ -2,11 +2,8 @@
 
 Easy to localize your React applications
 
-### Example ([sandbox](https://codesandbox.io/s/w7pmpzzpy5))
-
 ```jsx harmony
 import React from 'react';
-import ReactDOM from 'react-dom';
 import { Localization, setup, l } from 'react-l';
 
 setup([
@@ -27,7 +24,30 @@ const App = () => (
     </div>
   </Localization>
 );
-
-const rootElement = document.getElementById("root");
-ReactDOM.render(<App />, rootElement);
 ```
+
+[CodeSandbox](https://codesandbox.io/s/w7pmpzzpy5)
+
+## Installation
+
+#### NPM
+
+```
+npm i react-l
+```
+
+#### Yarn
+
+```
+yarn add react-l
+```
+
+## API
+
+### `setup(translations: Record<string, string>[]) => void`
+### `<Localization { fromLang: string, toLang: string, children?: any[] } />`
+### `l(sentence: string[] | string) => string[] | string`
+
+### License
+
+react-l is [MIT licensed](./LICENSE)

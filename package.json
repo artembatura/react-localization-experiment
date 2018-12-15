@@ -2,6 +2,11 @@
   "name": "react-l",
   "version": "0.0.1",
   "description": "Easy to localize your React applications",
+  "repository": "https://github.com/artemirq/react-l",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/artemirq/react-l/issues"
+  },
   "author": {
     "name": "Artem Batura",
     "email": "artemir.q@gmail.com"
@@ -10,8 +15,11 @@
     "src"
   ],
   "main": "src/index.js",
-  "license": "MIT",
+  "typings": "index.d.ts",
   "dependencies": {
     "react": "^16.6.0"
+  },
+  "devDependencies": {
+    "@types/react": "^16.7.17"
   }
 }
