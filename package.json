@@ -1,0 +1,17 @@
+{
+  "name": "react-l",
+  "version": "0.0.1",
+  "description": "Easy to localize your React applications",
+  "author": {
+    "name": "Artem Batura",
+    "email": "artemir.q@gmail.com"
+  },
+  "files": [
+    "src"
+  ],
+  "main": "src/index.js",
+  "license": "MIT",
+  "dependencies": {
+    "react": "^16.6.0"
+  }
+}
