@@ -1,11 +1,9 @@
-export const getPositionsOfLowerCaseLetters = str => {
-    const changes = [];
-
-    str.split().forEach((letter, i) => {
-        if (letter.toLowerCase() !== letter) {
-            changes.push(i);
-        }
-    });
-
-    return changes;
-};
+export const getPositionsOfLowerCaseLetters = str => (
+    str.split().reduce(
+        (positions, letter, i) => letter.toLowerCase() !== letter ? ([
+            ...positions,
+            i
+        ]) : positions,
+        []
+    )
+);
