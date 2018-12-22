@@ -1,6 +1,6 @@
 {
   "name": "react-l",
-  "version": "0.0.4",
+  "version": "0.1.0-alpha.0",
   "description": "Easy to localize your React applications",
   "repository": "https://github.com/artemirq/react-l",
   "license": "MIT",
@@ -20,6 +20,6 @@
     "react": "^16.6.0"
   },
   "devDependencies": {
-    "@types/react": "^16.7.17"
+    "@types/react": "^16.7.18"
   }
 }

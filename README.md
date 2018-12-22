@@ -18,9 +18,10 @@ setup([
 ]);
 
 const App = () => (
-  <Localization fromLang="en" toLang="ru">
+  <Localization fromLang="ru" toLang="en">
     <div>
-      <h1>{l`Hello world`}</h1>
+      <h1>{l`Привет, мир!`}</h1>
+      {/* Hello, world! */}
     </div>
   </Localization>
 );

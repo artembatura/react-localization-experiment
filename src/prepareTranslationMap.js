@@ -1,20 +1,13 @@
-const getMiddleLengthOfObjectValues = object => Object.values(object).reduce(
-    (length, sentence) => length + sentence.length,
-    0
-) / Object.keys(object).length;
+import { getMiddleLengthOfObjectValues } from './getMiddleLengthOfObjectValues';
 
 export const prepareTranslationMap = (translations, currentLang, defaultLang) =>
     translations.sort((left, right) => {
         const leftLength = getMiddleLengthOfObjectValues(left);
         const rightLength = getMiddleLengthOfObjectValues(right);
 
-        if (leftLength < rightLength) {
-            return 1;
-        } else if (leftLength > rightLength) {
-            return -1;
-        } else {
-            return 0;
-        }
+        return leftLength < rightLength ? 1 : (
+            leftLength > rightLength ? -1 : 0
+        );
     }).reduce(
         (current, transObj) => ({
             ...current,

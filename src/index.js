@@ -1,7 +1,7 @@
 import React from 'react';
-import { getPositionsOfLowerCaseLetters } from "./getPositionsOfLowerCaseLetters";
-import { prepareTranslationMap } from "./prepareTranslationMap";
-import { toUpperCaseByPositions } from "./toUpperCaseByPositions";
+import { prepareTranslationMap } from './prepareTranslationMap';
+import { extractSentenceOptions } from './extractSentenceOptions';
+import { applySentenceOptions } from './applySentenceOptions';
 
 const { Provider, Consumer } = React.createContext(null);
 
@@ -21,17 +21,17 @@ export const l = sentence => {
         return sentence.map(l);
     }
 
-    const positionArray = getPositionsOfLowerCaseLetters(sentence);
+    const sentenceOptions = extractSentenceOptions(sentence);
     let sentenceInLowerCase = sentence.toLowerCase();
 
     return (
         <Consumer>
             {map => {
-                Object.entries(map).forEach(([key, val]) => {
+                Object.entries(map).forEach(([ key, val ]) => {
                     sentenceInLowerCase = sentenceInLowerCase.replace(key, val);
                 });
 
-                return toUpperCaseByPositions(sentenceInLowerCase, positionArray);
+                return applySentenceOptions(sentenceInLowerCase, sentenceOptions);
             }}
         </Consumer>
     );
