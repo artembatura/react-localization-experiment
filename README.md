@@ -1,6 +1,4 @@
-# react-l
-
-Easy to localize your React applications
+# react-localization-experiment
 
 ```jsx harmony
 import React from 'react';
@@ -51,4 +49,4 @@ yarn add react-l
 
 ### License
 
-react-l is [MIT licensed](./LICENSE)
+`react-localization-experiment` and `react-l` is [MIT licensed](./LICENSE)
