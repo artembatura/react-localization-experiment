@@ -1,5 +1,23 @@
-import { Component } from 'react';
+import { FC } from 'react';
 
-export declare const setup: (translations: Record<string, string>[]) => void;
-export declare const l: <T extends string[] | string>(sentence: T) => T;
-export declare const Localization: Component<{ fromLang: string, toLang: string, children?: any[] }>;
+declare function addDictionary(
+  translations: Array<{ [lang: string]: string }>
+): void;
+
+declare function translate(
+  text: string,
+  fromLang: string,
+  toLang: string
+): string;
+
+declare const LocaleProvider: FC<{
+  srcLocale: string;
+  locale: string;
+  children?: any[];
+}>;
+
+declare const L: FC<{
+  children?: string;
+  from?: string;
+  to?: string;
+}>;
