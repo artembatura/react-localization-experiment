@@ -1,24 +1,24 @@
 {
   "name": "react-localization-experiment",
-  "version": "0.1.0",
-  "description": "Easy to localize your React applications",
-  "repository": "https://github.com/artemirq/react-l",
+  "version": "0.1.8",
+  "repository": "https://github.com/artemirq/react-localization-experiment",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/artemirq/react-l/issues"
+    "url": "https://github.com/artemirq/react-localization-experiment/issues"
   },
   "author": {
     "name": "Artem Batura",
     "email": "artemir.q@gmail.com"
   },
   "files": [
-    "src"
+    "build",
+    "index.d.ts"
   ],
-  "main": "src/index.js",
+  "main": "build/index.js",
   "typings": "index.d.ts",
-  "dependencies": {
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1"
+  "peerDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "@babel/core": "7.11.0",
@@ -29,6 +29,12 @@
     "@types/jest": "26.0.8",
     "@types/react": "16.9.44",
     "babel-jest": "26.2.2",
+    "esbuild": "0.6.17",
+    "globby": "^11.0.1",
     "jest": "26.2.2"
+  },
+  "scripts": {
+    "build": "node scripts/build.js",
+    "prepublishOnly": "npm run build"
   }
 }

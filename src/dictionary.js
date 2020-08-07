@@ -1,3 +1,9 @@
-import { useValue } from "./utils/useValue";
+let dictionary = [];
 
-export const [getDictionary, setDictionary] = useValue([]);
+export function getDictionary() {
+  return dictionary;
+}
+
+export function setDictionary(newDictionary) {
+  dictionary = newDictionary;
+}
