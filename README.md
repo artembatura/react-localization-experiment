@@ -2,9 +2,10 @@
 
 ```jsx harmony
 import React from 'react';
-import { Localization, setup, l } from 'react-l';
 
-setup([
+import { addDictionary, LocaleProvider, L } from 'react-localization-experiment';
+
+addDictionary([
   {
     en: "hello",
     ru: "привет"
@@ -16,12 +17,15 @@ setup([
 ]);
 
 const App = () => (
-  <Localization fromLang="ru" toLang="en">
+  <LocaleProvider srcLocale="en" locale="ru">
     <div>
-      <h1>{l`Привет, мир!`}</h1>
+      <L>Hello, world!</L>
+      {/* Привет, мир! */}
+
+      <L from="ru" to="en">Привет, мир!</L>
       {/* Hello, world! */}
     </div>
-  </Localization>
+  </LocaleProvider>
 );
 ```
 
@@ -29,24 +33,44 @@ const App = () => (
 
 ## Installation
 
-#### NPM
+### npm
 
 ```
-npm i react-l
+npm i react-localization-experiment
 ```
 
-#### Yarn
+### Yarn
 
 ```
-yarn add react-l
+yarn add react-localization-experiment
 ```
 
 ## API
 
-### `setup(translations: Record<string, string>[]) => void`
-### `<Localization { fromLang: string, toLang: string, children?: any[] } />`
-### `l(sentence: string[] | string) => string[] | string`
+```typescript
+declare function addDictionary(
+  translations: Array<{ [lang: string]: string }>
+): void;
+
+declare function translate(
+  text: string,
+  fromLang: string,
+  toLang: string
+): string;
+
+declare const LocaleProvider: React.FC<{
+  srcLocale: string;
+  locale: string;
+  children?: any[];
+}>;
+
+declare const L: React.FC<{
+  children: string;
+  from: string;
+  to: string;
+}>;
+```
 
 ### License
 
-`react-localization-experiment` and `react-l` is [MIT licensed](./LICENSE)
+`react-localization-experiment` is [MIT licensed](./LICENSE)

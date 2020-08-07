@@ -1,4 +1,4 @@
-export const WORD_OPTIONS = {
+export const WORD_META = {
     CASE: {
         UPPER_CASE: 'UPPER_CASE',
         LOWER_CASE: 'LOWER_CASE',
