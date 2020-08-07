@@ -1,5 +1,7 @@
 # react-localization-experiment
 
+Just example how localization can be implemented in other way in React as alternative to key-value based Intl.
+
 ```jsx harmony
 import React from 'react';
 
